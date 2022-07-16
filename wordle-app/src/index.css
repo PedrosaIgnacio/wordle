@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+html,
+body {
+  @apply font-nunito;
+}
+@tailwind utilities;
+
+.animacion-members {
+  animation-duration: 0.75s;
+  animation-name: entradaMembers;
+}
+@keyframes entradaMembers {
+  from {
+    transform: translate(-200%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
