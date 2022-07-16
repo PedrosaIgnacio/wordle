@@ -19,7 +19,7 @@ export const Docs = () => {
       <div className="flex justify-center items-center mt-10">
         <div>
           <button
-            className="px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="px-3 py-2 bg-[#570DF8] hover:bg-[#8c5ef0] text-white rounded "
             onClick={() => {
               setModalState(!modalState);
             }}

@@ -14,7 +14,7 @@ export const NewFolderModal = (props: INewFolderModal) => {
     <ReactModal
       style={{
         content: {
-          borderRadius: "1.75rem",
+          borderRadius: "0.5rem",
           boxShadow:
             "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
         },
@@ -51,7 +51,7 @@ export const NewFolderModal = (props: INewFolderModal) => {
         </div>
         <div id="footerModal" className="flex flex-wrap justify-center">
           <button
-            className="mt-4 mx-2 rounded shadow px-3 py-2 outline-none text-white font-medium bg-blue-500"
+            className="mt-4 mx-2 rounded shadow px-3 py-2 outline-none text-white font-medium bg-[#570DF8] hover:bg-[#8c5ef0]"
             onClick={(e) => {
               props.onSubmit(folderName, props.folderId);
               setFolderName("");

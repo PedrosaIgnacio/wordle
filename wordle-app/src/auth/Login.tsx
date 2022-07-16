@@ -19,7 +19,7 @@ export const Login = () => {
           <input
             type="text"
             placeholder="Username"
-            className="shadow-md rounded-lg border-b-400 my-3 py-2 px-3 w-full outline-none focus:shadow-lg focus:shadow-blue-200"
+            className="shadow-md rounded-lg border-b-400 my-3 py-2 px-3 w-full outline-none focus:shadow-sm focus:shadow-[#8c5ef0]"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -30,7 +30,7 @@ export const Login = () => {
           <input
             type="password"
             placeholder="Password"
-            className="shadow-md rounded-lg border-b-400 my-3 py-2 px-3 w-full outline-none focus:shadow-lg focus:shadow-blue-200"
+            className="shadow-md rounded-lg border-b-400 my-3 py-2 px-3 w-full outline-none focus:shadow-sm focus:shadow-[#8c5ef0]"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -40,7 +40,7 @@ export const Login = () => {
 
           <button
             type="button"
-            className="font-bold mt-4 px-3 py-2 w-full bg-blue-500 border rounded-lg text-white hover:bg-blue-400 outline-none"
+            className="font-bold mt-4 px-3 py-2 w-full bg-[#570DF8] hover:bg-[#8c5ef0] border rounded-lg text-white  outline-none"
             onClick={async () => {
               try {
                 await login(email, password);

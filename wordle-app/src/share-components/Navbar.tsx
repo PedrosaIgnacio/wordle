@@ -30,7 +30,7 @@ export const Navbar = () => {
                 <NavLink to={"/members"}>Members</NavLink>
               </li>
               <li>
-                <button>Logout</button>
+                <button onClick={() => logout()}>Logout</button>
               </li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ export const Navbar = () => {
           </li>
 
           <button
-            className="bg-blue-500 rounded px-3 py-2 text-white text-medium outline-none hover:bg-blue-600 hidden md:inline-block lg:inline-block xl:inline-block"
+            className="bg-[#570DF8] hover:bg-[#8c5ef0] rounded px-3 py-2 text-white  text-medium outline-none hidden md:inline-block lg:inline-block xl:inline-block"
             onClick={() => {
               logout();
             }}
