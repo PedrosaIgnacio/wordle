@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "react-query";
 
 export interface IFolder {
   name: string;
-  parentFolderId?: number;
+  parentFolderId: number;
 }
 
 export const useCreateFolder = () => {
@@ -15,12 +15,12 @@ export const useCreateFolder = () => {
     {
       onSuccess: (data) => {
         queryClient.invalidateQueries(["folder"]);
-        if (
-          data.data.parentFolderId !== null &&
-          data.data.parentFolderId !== undefined
-        ) {
-          queryClient.invalidateQueries([`folder-${data.data.parentFolderId}`]);
-        }
+        // if (
+        //   data.data.parentFolderId !== null &&
+        //   data.data.parentFolderId !== undefined
+        // ) {
+        queryClient.invalidateQueries([`folder-${data.data.parentFolderId}`]);
+        // }
       },
     }
   );

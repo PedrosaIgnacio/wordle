@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import ReactModal from "react-modal";
 
 interface INewFolderModal {
   isOpen: boolean;
-  onSubmit: (name: string, parentFolderId: number | undefined) => void;
+  onSubmit: (name: string, parentFolderId: number) => void;
   onCancel: () => void;
   folderId: number | undefined;
 }
@@ -49,12 +50,23 @@ export const NewFolderModal = (props: INewFolderModal) => {
             }}
           />
         </div>
-        <div id="footerModal" className="flex flex-wrap justify-center">
+        <hr className="w-full" />
+
+        <div id="footerModal" className="flex flex-wrap">
           <button
-            className="mt-4 mx-2 rounded shadow px-3 py-2 outline-none text-white font-medium bg-[#570DF8] hover:bg-[#8c5ef0]"
+            className="mt-4 mx-2 rounded shadow px-3 py-2 outline-none text-white font-medium bg-[#1F2937] hover:bg-[#2d343d]"
             onClick={(e) => {
-              props.onSubmit(folderName, props.folderId);
-              setFolderName("");
+              if (folderName.trim() !== "") {
+                props.onSubmit(
+                  folderName,
+                  props.folderId === undefined ? 0 : props.folderId
+                );
+                setFolderName("");
+                toast.success("Folder has been created");
+              } else {
+                props.onCancel();
+                toast.error("You have to write a folder name");
+              }
             }}
           >
             Create Folder

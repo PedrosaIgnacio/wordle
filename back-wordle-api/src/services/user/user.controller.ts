@@ -20,13 +20,12 @@ export default class UserController {
       },
     });
   }
-
-  // @Post()
-  // async CreateUser(@Res() res: Response, @Req() req: Request) {
-  //   const users = await createUserSchema.parseAsync(req.body);
-  //   await prisma.user.create({ data: users });
-  //   return res.json("User created succesful");
-  // }
+  @Post()
+  async CreateUser(@Res() res: Response, @Req() req: Request) {
+    const users = await createUserSchema.parseAsync(req.body);
+    await prisma.user.create({ data: users });
+    return res.json("User created succesful");
+  }
   @Delete("/:id")
   async DeleteUser(@Res() res: Response, @Req() req: Request) {
     const id = parseInt(req.params.id);

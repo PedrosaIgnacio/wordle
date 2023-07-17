@@ -1,3 +1,4 @@
+import "dotenv/config";
 import "reflect-metadata";
 import express from "express";
 import { useContainer, useExpressServer } from "routing-controllers";
@@ -5,6 +6,7 @@ import Container from "typedi";
 import path from "path";
 import { prisma } from "./utils/client";
 import cors from "cors";
+
 (async () => {
   await prisma.$connect();
   const app = express();

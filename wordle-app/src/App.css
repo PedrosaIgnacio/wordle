@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  transform: scaleX(-1);
 }
 .login-title {
   text-shadow: 10px 10px gray;

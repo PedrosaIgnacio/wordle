@@ -22,12 +22,12 @@ model Folder{
 
 model User{
   id Int @id() @default(autoincrement())
-  firebaseId String
+  password String @db.VarChar(25)
+  // firebaseId String
   username String @unique() @db.VarChar(25)
-  filesUploaded File[]
-  photo String 
-  description String?
-  hashtags String[]
+  // filesUploaded File[]
+  // photo String 
+  // description String?
 }
 
 model File{
@@ -35,7 +35,7 @@ model File{
   name String @db.VarChar(25)
   url String 
   createdAt DateTime @default(now())
-  uploadedBy User @relation(references: [id], fields: [uploadedById])
+  // uploadedBy User @relation(references: [id], fields: [uploadedById])
   uploadedById Int 
   folder Folder @relation(references: [id], fields: [folderId])
   folderId Int
